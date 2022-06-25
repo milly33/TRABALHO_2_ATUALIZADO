@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container-fluid bg-secondary" style="background-image: url(img/.jpg); background-size: contain; ">
+
+        <!-- MENU -->
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="homer.html">BTM</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="homer.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="jogabilidade.html">Jogabilidade</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="personagem.html">Personagem</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="criar.html">Criar/P</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="sobre.html">Sobre</a>
+                        </li>
+
+
+
+                    </ul>
+
+                </div>
+            </nav>
+
+
+        </div>
+
+
+        <!--FORMULÁRIO 1 -->
+        <!--FORMULÁRIO DINÂMICO EM JS DE CRIAÇÃO DE PERSONAGEM-->
+        <div class="row justify-content-center">
+            <div class="col-md-6 mt-1 mb-5">
+                <div class="form-group">
+                    <div class="text-center mb-5">
+                        <label for="numero-formulario" class="text-white" style="font-family: 'Fascinate', cursive; font-size: 55px;">Crie
+                            seu
+                            personagem</label>
+                    </div>
+                    <select class="form-select bg-dark text-white" id="numero-formulario" name="numero-formulario"
+                        onchange="camposfomrulario(value);">
+                        <option value="0">Selecione a quantidade</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+
+                </div>
+            </div>
+        </div>
+
+        <span id="span-real">
+        </span>
+
+
+        <!--FOOTER-->
+        <div class="row bg-dark" style="height:400px;">
+            <div class="card-footer mt-5 ">
+                <div class="text-center text-white mt-5 ">
+                    <h4>CURSO DE TI DA ESTACIO DE BRASILIA EM 2021 (TIEB 2022.1)</h4>
+                    <p>TODOS OS DIREITOS RESERVADOS</p>
+                    <p>(TERRA MÉDIA, LOCAIS E PERSONAGENS SÃO DIREITOS AUTORAIS DE
+                        <a href="homer.html ">TOLKIEN ENTERPRISES)</a>
+                    </p>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SCRIPT JS -->
+    <script>
+        function camposfomrulario(campos) {
+            if (campos === '0') {
+                $("#span-real").empty()
+            } else {
+
+                // var spanformulario = $('#span-formulario').html(); Não precisa disso já que você não vai pegar de lá de cima
+                // var spanformulario_string = spanformulario.toString(); nem disso assim
+
+
+
+
+                var spanformulario_string = `
+      
+                  
+                   <div class="row justify-content-center mb-2 ">
+                  <div class="border col-4  bg-dark text-white ">
+      
+                      <div class="form-check form-switch bg-transparent mt-3">
+                          <input class="form-check-input" type="checkbox">
+                          <label class="form-check-label" for="flexSwitchCheckDefault">Incluir este personagem na
+                              batalha</label>
+                      </div>
+      
+      
+      
+      
+                      <div class="input-group mb-3 mt-3">
+                          <span class="input-group-text bg-transparent  text-white" id="basic-addon1 ">Nome</span>
+                          <input type="text" class="form-control bg-transparent  text-white" placeholder="Dexter">
+                      </div>
+                      <p>Nação</p>
+      
+                      <div class=" mb-1 text-start ">
+                          <div class="form-check form-check-inline ">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                              <label class="form-check-label " for="inlineRadio2 ">Anão</label>
+                          </div>
+      
+                          <div class="form-check form-check-inline ">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                              <label class="form-check-label " for="inlineRadio2 ">Elfo da floresta</label>
+                          </div>
+      
+                      </div>
+                      <div class=" mb-1 text-start ">
+                          <div class="form-check form-check-inline ">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                              <label class="form-check-label " for="inlineRadio2 ">Hobbit</label>
+                          </div>
+      
+                          <div class="form-check form-check-inline ">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                              <label class="form-check-label " for="inlineRadio2 ">Elfo de Lothlórien</label>
+                          </div>
+      
+                      </div>
+                      <div class=" mb-1 text-start ">
+                          <div class="form-check form-check-inline ">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                              <label class="form-check-label " for="inlineRadio2 ">Cavaleiro de Rohan</label>
+                          </div>
+      
+                          <div class="form-check form-check-inline ">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                              <label class="form-check-label " for="inlineRadio2 ">Orc Snaga</label>
+                          </div>
+      
+                      </div>
+                      <div class=" mb-1 text-start ">
+                          <div class="form-check form-check-inline ">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                              <label class="form-check-label " for="inlineRadio2 ">Guerreiro de Gondor</label>
+                          </div>
+      
+                          <div class="form-check form-check-inline ">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                              <label class="form-check-label " for="inlineRadio2 ">Uruk-hai</label>
+                          </div>
+      
+                      </div>
+      
+      
+                  </div>
+      
+                  <!--FORMULÁRIO DE CRIAÇÃO DE HABILIDADE-->
+                  <div class="border bg-dark col-4  text-white ">
+                      <div class="mt-3 text-center ">
+                          <p class=" ">Habilidades</p>
+                      </div>
+      
+                      <div class="input-group mt-1 ">
+                          <span class="input-group-text w-25 bg-transparent text-white" id="basic-addon1 ">Força</span>
+                          <input type="number" name="" id="" class="form-control text-center bg-transparent text-white">
+                      </div>
+      
+                      <div class="input-group mt-1 ">
+                          <span class="input-group-text w-25 bg-transparent text-white" id="basic-addon1 ">Precisão</span>
+                          <input type="number" name="" id="" class="form-control text-center bg-transparent text-white">
+                      </div>
+      
+                      <div class="input-group mt-1 ">
+                          <span class="input-group-text w-25 bg-transparent text-white" id="basic-addon1 ">Velocidade</span>
+                          <input type="number" name="" id="" class="form-control text-center bg-transparent text-white">
+                      </div>
+      
+                      <div class="input-group mt-1 ">
+                          <span class="input-group-text w-25 bg-transparent text-white" id="basic-addon1 ">Armadura</span>
+                          <input type="number" name="" id="" class="form-control text-center bg-transparent text-white">
+                      </div>
+      
+                      <div class="input-group mt-1 ">
+                          <span class="input-group-text w-25 bg-transparent text-white" id="basic-addon1 ">Recuperação</span>
+                          <input type="number" name="" id="" class="form-control text-center bg-transparent text-white">
+                      </div>
+      
+                  </div>
+                  <!--BOTÃO DE CRIAÇÃO DE PERSONAGEM-->
+                  <div class="row justify-content-center ">
+                  <div class=" col-8 " style="margin-left: -40px; ">
+                      <div class="mt-2 mb-2 text-start ">
+                          <button type="button " class="btn bg-dark border text-white">Criar personagem</button>
+                          <button type="button " class="btn bg-dark border text-white">Deletar personagem</button>
+      
+                      </div>    
+                  </div>
+      
+                 </div>
+      
+                 
+              </div>
+              `
+
+                var i;
+                i = 1;
+                var texto = '';
+                while (i <= campos) {
+                    texto = texto + spanformulario_string.replace(/-0/g, '-' + i.toString())
+                    i = i + 1;
+
+                    $("#span-real").html(texto);
+                }
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
+
+
+
+
+</body>
+
+</html>
